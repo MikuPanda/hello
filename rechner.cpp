@@ -1,6 +1,7 @@
 #include <iostream> //wird für CIN und COUT benötigt
 #include <tchar.h>
 #include "math.h"
+//#include "BigInt.hpp"
 
 using namespace std; //Die normale Klassenschreibweise std::cin wird nun abgekürzt mit cin
 
@@ -126,13 +127,16 @@ double zahleingeben()
                     Operatorzeichen eingegeben werden kann
                  */
              case '!':
-                dergebnis = fak(dzahl1);
+                // bigint a = 0;
+                std::cout << fak(dzahl1) << std::endl;
                 break;   
          }
         
-         //A-usgabe
-         cout << "Ihr Ergebnis lautet: " << dergebnis << "\n"; //Verkettete Ausgabe durch erneutes <<
-        
+         if (coperator != '!') {
+            //A-usgabe
+            cout << "Ihr Ergebnis lautet: " << dergebnis << "\n"; //Verkettete Ausgabe durch erneutes <<
+         }
+         
          //Benutzerabfrage: Noch eine Runde?
          cout << "Moechten Sie noch eine Rechnung durchfuehren (J/N)?";
          cin >> cantwort;
